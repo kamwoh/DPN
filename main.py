@@ -19,7 +19,7 @@ parser.add_argument('--nbit', default=64, type=int, help='number of bits')
 parser.add_argument('--bs', default=256, type=int, help='batch size')
 parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
 parser.add_argument('--epochs', default=200, type=int, help='training epochs')
-parser.add_argument('--ds', default='imagenet', choices=['cifar10', 'cifar100', 'imagenet', 'nuswide'], help='dataset')
+parser.add_argument('--ds', default='imagenet100', choices=['cifar10', 'cifar100', 'imagenet100', 'nuswide'], help='dataset')
 parser.add_argument('--arch', default='alexnet', choices=['alexnet'], help='backbone name')
 
 # loss related
