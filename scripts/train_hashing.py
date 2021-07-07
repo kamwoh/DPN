@@ -313,14 +313,14 @@ def prepare_model(config, device):
     logging.info('Creating Model')
     model = configs.arch(config)
     extrabit = model.extrabit
-    if torch.cuda.device_count() > 1:
-        model = torch.nn.DataParallel(model)
+    # if torch.cuda.device_count() > 1:
+    #     model = torch.nn.DataParallel(model)
     model = model.to(device)
     return model, extrabit
 
 
 def main(config):
-    device = torch.device('cuda')
+    device = torch.device(config.get('device', 'cuda:0'))
 
     io.init_save_queue()
 

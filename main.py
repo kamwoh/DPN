@@ -39,6 +39,8 @@ parser.add_argument('--centroid-method', default='N', choices=['N', 'B', 'O'], h
 
 parser.add_argument('--seed', default=torch.randint(100000, size=()).item(), help='seed number; default: random')
 
+parser.add_argument('--device', default='cuda:0')
+
 args = parser.parse_args()
 
 config = {
@@ -87,7 +89,9 @@ config = {
     'margin': args.margin,
     'sl': args.sl,
     'ce': args.ce,
-    'reg': args.reg
+    'reg': args.reg,
+
+    'device': args.device
 }
 
 config['arch_kwargs']['nclass'] = configs.nclass(config)
